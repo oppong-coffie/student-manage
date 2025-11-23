@@ -9,32 +9,19 @@ export default function StatCards() {
     },
     {
       id: 2,
-      label: "Total Transactions",
+      label: "Discount Redemption",
       value: "₵11,987.00",
       icon: "💳",
       trend: "up",
     },
     {
       id: 3,
-      label: "Total Users",
+      label: "Student Engagement",
       value: "5,000",
       icon: "👥",
       trend: "up",
-    },
-    {
-      id: 4,
-      label: "Pending Students",
-      value: "500",
-      icon: "📊",
-      action: "Review",
-    },
-    {
-      id: 5,
-      label: "Pending Partners",
-      value: "500",
-      icon: "📊",
-      action: "Review",
-    },
+    }
+   
   ]
 
   return (

@@ -1,12 +1,11 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Header from "../components/dashboard/Header.jsx";
-import Sidebar from "../components/dashboard/Sidebar.jsx";
+import Header from "../components/dashboard3/Header.jsx";
+import Sidebar from "../components/dashboard3/Sidebar.jsx";
 import Homepage from "./Homepage.jsx";
-import Transactions from "./Transactions.jsx";
-import AccountManage from "./AccountManage.jsx";
-import Investment from "./Investment.jsx";
-import Transfer from "./Transfer.jsx";
+import ProductManage from "./ProductManage.jsx";
+import OrderManage from "./OrderManage.jsx";
+import Integrations from "./Integrations.jsx";
 import Report from "./Report.jsx";
 import Settings from "./Settings.jsx";
 
@@ -27,11 +26,10 @@ export default function Dashboard() {
         {/* Main Content */}
         <main className="flex-1 lg:ml-64 p-6 overflow-y-auto">
           <Routes>
-            <Route index element={<Homepage />} /> {/* /dashboard */}
-            <Route path="transactions" element={<Transactions />} /> {/* /dashboard/transactions */}
-            <Route path="account" element={<AccountManage />} /> {/* /dashboard/account */}
-            <Route path="investment" element={<Investment />} /> {/* /dashboard/investment */}
-            <Route path="transfer" element={<Transfer />} /> {/* /dashboard/transfer */}
+            <Route index element={<Homepage />} />
+            <Route path="product-management" element={<ProductManage />} />
+            <Route path="order-management" element={<OrderManage />} />
+            <Route path="integrations" element={<Integrations />} />
             <Route path="reports" element={<Report />} />
             <Route path="setting" element={<Settings />} />
           </Routes>

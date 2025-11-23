@@ -3,11 +3,11 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { LayoutDashboard, List, Users, TrendingUp, Send, BarChart3, Settings, LogOut } from "lucide-react";
 
 const menuItems = [
-  { label: "Homepage", icon: LayoutDashboard, path: "" },          
-  { label: "User Management", icon: List, path: "user-management" },     
-  { label: "Partner Management", icon: Users, path: "partner-management" },
-  { label: "Financial Oversight", icon: TrendingUp, path: "financial" },
-  { label: "Reports & Analysis", icon: BarChart3, path: "reports3" },
+  { label: "Dashboard", icon: LayoutDashboard, path: "" },
+  { label: "Product Management", icon: List, path: "product-management" },
+  { label: "Order Management", icon: Users, path: "order-management" },
+  { label: "Integrations", icon: TrendingUp, path: "integrations" },
+  { label: "Reports & Analysis", icon: BarChart3, path: "reports" },
 ];
 
 export default function Sidebar() {
@@ -23,7 +23,7 @@ export default function Sidebar() {
 
   const handleNavigation = (path) => {
     setActive(path);
-    navigate(path ? `/dashboard3/${path}` : "/dashboard3");
+    navigate(path ? `/dashboard/${path}` : "/dashboard");
   };
 
   return (
@@ -37,9 +37,8 @@ export default function Sidebar() {
             <button
               key={item.label}
               onClick={() => handleNavigation(item.path)}
-              className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
-                isActive ? "bg-orange-500 text-white" : "text-gray-700 hover:bg-gray-100"
-              }`}
+              className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${isActive ? "bg-orange-500 text-white" : "text-gray-700 hover:bg-gray-100"
+                }`}
             >
               <Icon className="w-5 h-5" />
               <span>{item.label}</span>
@@ -51,19 +50,18 @@ export default function Sidebar() {
       {/* Bottom menu */}
       <div className="flex flex-col gap-2 mt-16">
         <button
-          onClick={() => navigate("/dashboard3/setting")}
-          className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
-            location.pathname === "/dashboard3/setting"
+          onClick={() => navigate("/dashboard/setting")}
+          className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${location.pathname === "/dashboard/setting"
               ? "bg-orange-500 text-white"
               : "text-gray-700 hover:bg-gray-100"
-          }`}
+            }`}
         >
           <Settings className="w-5 h-5" />
           <span>Settings</span>
         </button>
 
         <button
-          onClick={() => navigate("/login3")}
+          onClick={() => navigate("/")}
           className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors"
         >
           <LogOut className="w-5 h-5" />
